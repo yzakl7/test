@@ -1,0 +1,305 @@
+<form 
+  #objetoData="ngForm" 
+  ngNativeValidate
+  (ngSubmit)="onSubmit(objetoData)" 
+>
+  <input 
+    type="hidden" 
+    name='$key' 
+    #$key='ngModel' 
+    [(ngModel)]='objetoService.objetoData.$key'>
+  
+  <div [ngSwitch]="objetoService.objetoData.role">
+    <div *ngSwitchCase="'carro'" class="inputGroup">
+      <div class="input">
+        <label for="role">Nuevo: </label>
+        <select 
+          required 
+          name="role" 
+          #role="ngModel" 
+          [(ngModel)]="objetoService.objetoData.role">
+            <option>carro</option> 
+            <option>venta</option> 
+            <option>cliente</option> 
+            <option>empleado</option> 
+        </select>
+      </div>
+      <div class="input">
+        <label for="name">Name: </label>
+        <input 
+          required
+          type="text"
+          name="name"
+          #name="ngModel"
+          [(ngModel)]="objetoService.objetoData.name"
+          placeholder="Escribir nombre">
+      </div>
+      <div class="input">
+        <label for="origyn">Origin: </label>
+        <input 
+          type="text"
+          name="origyn"
+          #origyn="ngModel"
+          [(ngModel)]="objetoService.objetoData.origyn"
+          placeholder="...">
+      </div>
+      <div class="input">
+        <label for="plates">Plates: </label>
+        <input 
+          type="text"
+          name="plates"
+          #plates="ngModel"
+          [(ngModel)]="objetoService.objetoData.plates"
+          placeholder="Plates">
+      </div>
+      <div class="input">
+        <label for="color">Color: </label>
+        <input 
+          type="color"
+          name="color"
+          #color="ngModel"
+          [(ngModel)]="objetoService.objetoData.color"
+          placeholder="color">
+      </div>
+      <div class="input">
+          <label for="save">
+            <a href="#modalTrigger" class="close" aria-label="Close dialog">
+              <i class="material-icons"> cancel </i>
+            </a>
+            <a href="#modalTrigger" (click)="onSubmit(objetoData)" class="close" aria-label="Close dialog">
+              <i class="material-icons"> save </i>
+            </a>
+          </label>
+      </div>
+    </div>
+    <div *ngSwitchCase="'venta'" class="inputGroup">
+        <div class="input">
+          <label for="role">Tipo: </label>
+          <select 
+            required 
+            name="role" 
+            #role="ngModel" 
+            [(ngModel)]="objetoService.objetoData.role">
+              <option>carro</option> 
+              <option>venta</option> 
+              <option>cliente</option> 
+              <option>empleado</option> 
+          </select>
+        </div>
+  
+        <div class="input">
+          <label for="name">Product: </label>
+          <input 
+            required
+            type="text"
+            name="name"
+            #name="ngModel"
+            [(ngModel)]="objetoService.objetoData.name"
+            placeholder="Escribir nombre">
+        </div>
+  
+        <div class="input">
+          <label for="origyn">Origin: </label>
+          <input 
+            type="text"
+            name="origyn"
+            #origyn="ngModel"
+            [(ngModel)]="objetoService.objetoData.origyn"
+            placeholder="...">
+        </div>
+
+        <div class="input">
+          <label for="qty">Qty: </label>
+          <input 
+            type="number"
+            name="qty"
+            #qty="ngModel"
+            [(ngModel)]="objetoService.objetoData.qty"
+            placeholder="qty">
+        </div>
+
+        <div class="input">
+          <label for="price">Price: </label>
+          <input 
+            type="number"
+            name="price"
+            #price="ngModel"
+            [(ngModel)]="objetoService.objetoData.price"
+            placeholder="price">
+        </div>
+
+        <div class="input">
+            <label for="save">
+              <a href="#modalTrigger" class="close" aria-label="Close dialog">
+                <i class="material-icons"> cancel </i>
+              </a>
+              <a href="#modalTrigger" (click)="onSubmit(objetoData)" class="close" aria-label="Close dialog">
+                <i class="material-icons"> save </i>
+              </a>
+            </label>
+          </div>
+    </div>
+    <div *ngSwitchCase="'cliente'" class="inputGroup">
+        <div class="input">
+          <label for="role">Tipo: </label>
+          <select 
+            required 
+            name="role" 
+            #role="ngModel" 
+            [(ngModel)]="objetoService.objetoData.role">
+              <option>carro</option> 
+              <option>venta</option> 
+              <option>cliente</option> 
+              <option>empleado</option> 
+          </select>
+        </div>
+  
+        <div class="input">
+          <label for="name">Nombre: </label>
+          <input 
+            required
+            type="text"
+            name="name"
+            #name="ngModel"
+            [(ngModel)]="objetoService.objetoData.name"
+            placeholder="Escribir nombre">
+        </div>
+  
+        <div class="input">
+          <label for="companyName">Email: </label>
+          <input 
+            type="email"
+            name="email"
+            #email="ngModel"
+            [(ngModel)]="objetoService.objetoData.email"
+            placeholder="...">
+        </div>
+
+        <div class="input">
+          <label for="address">Address: </label>
+          <input 
+            type="number"
+            name="address"
+            #qty="ngModel"
+            [(ngModel)]="objetoService.objetoData.address"
+            placeholder="address">
+        </div>
+
+        <div class="input">
+          <label for="price">Phone: </label>
+          <input 
+            type="number"
+            name="phone"
+            #price="ngModel"
+            [(ngModel)]="objetoService.objetoData.phone"
+            placeholder="phone">
+        </div>
+
+        <div class="input">
+            <label for="save">
+              <a href="#modalTrigger" class="close" aria-label="Close dialog">
+                <i class="material-icons"> cancel </i>
+              </a>
+              <a href="#modalTrigger" (click)="onSubmit(objetoData)" class="close" aria-label="Close dialog">
+                <i class="material-icons"> save </i>
+              </a>
+            </label>
+          </div>
+    </div>
+    <div *ngSwitchCase="'empleado'" class="inputGroup">
+        <div class="input">
+          <label for="role">Tipo: </label>
+          <select 
+            required 
+            name="role" 
+            #role="ngModel" 
+            [(ngModel)]="objetoService.objetoData.role">
+              <option>carro</option> 
+              <option>venta</option> 
+              <option>cliente</option> 
+              <option>empleado</option> 
+          </select>
+        </div>
+  
+        <div class="input">
+          <label for="name">Nombre: </label>
+          <input 
+            required
+            type="text"
+            name="name"
+            #name="ngModel"
+            [(ngModel)]="objetoService.objetoData.name"
+            placeholder="Escribir nombre">
+        </div>
+  
+        <div class="input">
+          <label for="position">Position: </label>
+          <input 
+            type="text"
+            name="position"
+            #position="ngModel"
+            [(ngModel)]="objetoService.objetoData.position"
+            placeholder="...">
+        </div>
+
+        <div class="input">
+          <label for="address">Address: </label>
+          <input 
+            type="number"
+            name="address"
+            #qty="ngModel"
+            [(ngModel)]="objetoService.objetoData.address"
+            placeholder="address">
+        </div>
+
+        <div class="input">
+          <label for="price">Phone: </label>
+          <input 
+            type="number"
+            name="phone"
+            #price="ngModel"
+            [(ngModel)]="objetoService.objetoData.phone"
+            placeholder="phone">
+        </div>
+
+        <div class="input">
+          <label for="save">
+            <a href="#modalTrigger" class="close" aria-label="Close dialog">
+              <i class="material-icons"> cancel </i>
+            </a>
+            <a href="#modalTrigger" (click)="onSubmit(objetoData)" class="close" aria-label="Close dialog">
+              <i class="material-icons"> save </i>
+            </a>
+          </label>
+        </div>
+    </div>
+
+    <div *ngSwitchDefault class="inputGroup">
+      <h3>Agregar nuevo...</h3>
+      <div class="input">
+        <label for="role">Tipo: </label>
+        <select 
+          required 
+          name="role" 
+          #role="ngModel" 
+          [(ngModel)]="objetoService.objetoData.role">
+            <option>carro</option> 
+            <option>venta</option> 
+            <option>cliente</option> 
+            <option>empleado</option> 
+        </select>
+      </div>
+
+      <div class="input">
+          <label for="save">
+            <a href="#modalTrigger" class="close" aria-label="Close dialog">
+              <i class="material-icons"> cancel </i>
+            </a>
+          </label>
+        </div>
+    </div>
+
+  </div>
+
+
+</form>

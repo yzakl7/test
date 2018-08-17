@@ -1,0 +1,134 @@
+<div class="tabs">
+  <div class="tab">
+    <input type="radio" name="tabgroup" id="tab-1" checked>
+    <label for="tab-1">Carros</label>
+    <div class="content">
+        <div class="table">
+            <div class="row">
+                <p>name</p> 
+                <p>color</p>
+                <p>plates</p>
+                <p>origin</p>
+                <p>role</p>
+                <p>actions</p>
+            </div>
+            <ng-container *ngFor='let objeto of objetoList' >
+              <div class="row" *ngIf="objeto.role === 'carro'" >
+                <p>{{objeto.name}}</p> 
+                <p>{{objeto.color}}</p>
+                <p>{{objeto.plates}}</p>
+                <p>{{objeto.origyn}}</p>
+                <p>{{objeto.role}}</p>
+                <div class="actions">
+                  <a href="#modalDialog" id="modalTrigger" (click)='onEdit (objeto)'><i class="material-icons"> edit </i></a>
+                  <a href="#" (click)='onDelete(objeto.$key)'><i class="material-icons"> delete </i></a>
+                </div>
+              </div>
+            </ng-container>
+        </div>
+    </div> 
+  </div>
+
+  <div class="tab">
+      <input type="radio" name="tabgroup" id="tab-2" >
+      <label for="tab-2">Clientes</label>
+      <div class="content">
+          <div class="table">
+              <div class="row">
+                  <p>name</p> 
+                  <p>address</p>
+                  <p>phone</p>
+                  <p>email</p>
+                  <p>role</p>
+                  <p>actions</p>
+              </div>
+              <ng-container *ngFor='let objeto of objetoList' >
+                <div class="row" *ngIf="objeto.role === 'cliente'" >
+                  <p>{{objeto.name}}</p> 
+                  <p>{{objeto.address}}</p>
+                  <p>{{objeto.phone}}</p>
+                  <p>{{objeto.email}}</p>
+                  <p>{{objeto.role}}</p>
+                  <div class="actions">
+                    <a href="#modalDialog" id="modalTrigger" (click)='onEdit (objeto)'><i class="material-icons"> edit </i></a>
+                    <a href="#" (click)='onDelete(objeto.$key)'><i class="material-icons"> delete </i></a>
+                  </div>
+                </div>
+              </ng-container>
+          </div>
+      </div> 
+    </div>
+
+  <div class="tab">
+      <input type="radio" name="tabgroup" id="tab-3" >
+      <label for="tab-3">Ventas</label>
+      <div class="content">
+          <div class="table">
+              <div class="row">
+                  <p>product</p> 
+                  <p>origin</p>
+                  <p>qty</p>
+                  <p>price</p>
+                  <p>role</p>
+                  <p>actions</p>
+              </div>
+              <ng-container *ngFor='let objeto of objetoList' >
+                <div class="row" *ngIf="objeto.role === 'venta'" >
+                  <p>{{objeto.product}}</p> 
+                  <p>{{objeto.origin}}</p>
+                  <p>{{objeto.qty}}</p>
+                  <p>{{objeto.price}}</p>
+                  <p>{{objeto.role}}</p>
+                  <div class="actions">
+                    <a href="#modalDialog" id="modalTrigger" (click)='onEdit (objeto)'><i class="material-icons"> edit </i></a>
+                    <a href="#" (click)='onDelete(objeto.$key)'><i class="material-icons"> delete </i></a>
+                  </div>
+                </div>
+              </ng-container>
+          </div>
+      </div> 
+  </div>
+        
+  <div class="tab">
+      <input type="radio" name="tabgroup" id="tab-4" >
+      <label for="tab-4">Empleados</label>
+      <div class="content">
+          <div class="table">
+              <div class="row">
+                  <p>name</p> 
+                  <p>position</p>
+                  <p>address</p>
+                  <p>phone</p>
+                  <p>role</p>
+                  <p>actions</p>
+              </div>
+              <ng-container *ngFor='let objeto of objetoList' >
+                <div class="row" *ngIf="objeto.role === 'empleado'" >
+                  <p>{{objeto.name}}</p> 
+                  <p>{{objeto.position}}</p>
+                  <p>{{objeto.address}}</p>
+                  <p>{{objeto.phone}}</p>
+                  <p>{{objeto.role}}</p>
+                  <div class="actions">
+                    <a href="#modalDialog" id="modalTrigger" (click)='onEdit (objeto)'><i class="material-icons"> edit </i></a>
+                    <a href="#" (click)='onDelete(objeto.$key)'><i class="material-icons"> delete </i></a>
+                  </div>
+                </div>
+              </ng-container>
+          </div>
+      </div> 
+  </div>
+
+</div>
+
+<a href="#modalDialog" (click)='clearForm()'>
+  <div class="addButton">
+    <i class="material-icons"> add </i>
+  </div>
+</a>
+
+<dialog class="modal" id="modalDialog" tabindex="-1">
+  <div class="modalBody">
+    <app-detalle-de-objeto></app-detalle-de-objeto>
+  </div>
+</dialog>
